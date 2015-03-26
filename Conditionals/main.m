@@ -11,32 +11,12 @@
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         // insert code here...
-        float bankAccount = -200.0;
-        const float fiftythousand = 50000;
-        const float million = 1000000;
-        const float billion = 1000000000;
-        if (bankAccount < 0){
-            NSLog(@"You have a negative balance");
-            
-        }
-        else if (bankAccount >= fiftythousand && bankAccount < million){
-            NSLog(@"You are rich!!!");
-            
-            
-        }
-        else if (bankAccount >= million  && bankAccount < billion){
-            NSLog(@"You should donate money");
-            
-        }
-        else if (bankAccount >= billion){
-            NSLog(@"You suck!");
-            
-        }
-        else {
-            NSLog(@"You have money!");
-            
-            
-        }
+        float bankAccount = 2000.0;
+        const float richthreshold = 50000;
+        char * output = bankAccount < richthreshold ? "You are not rich." : "You are rich.";
+        char * output2 = bankAccount >= richthreshold ? "You are very lucky." : "Tough luck.";
+        NSLog (@"%s\n%s", output, output2);
+        
     }
     return 0;
 }
